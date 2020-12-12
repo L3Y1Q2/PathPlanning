@@ -1,6 +1,6 @@
 Overview
 ------
-This repository implements some common path planning algorithms used in robotics, including Search-based algorithms and Sampling-based algorithms. We designed animation for each algorithm to display the running process.
+This repository implements some common path planning algorithms used in robotics, including Search-based algorithms and Sampling-based algorithms. We designed animation for each algorithm to display the running process. The related papers are listed in [Papers](https://github.com/zhm-real/PathPlanning#papers).
 
 Directory Structure
 ------
@@ -18,8 +18,7 @@ Directory Structure
         ├── Lifelong Planning A* (LPA*)
         ├── Dynamic A* (D*)
         ├── D* Lite
-        ├── Anytime D*
-        └── Potential Field
+        └── Anytime D*
     └── Sampling-based Planning
         ├── RRT
         ├── RRT-Connect
@@ -31,9 +30,9 @@ Directory Structure
         ├── Anytime RRT*
         ├── Closed-Loop RRT*
         ├── Spline-RRT*
-        ├── LQR-RRT*
         ├── Fast Marching Trees (FMT*)
         └── Batch Informed Trees (BIT*)
+    └── Papers
 
 ## Animations - Search-Based
 ### Best-First & Dijkstra

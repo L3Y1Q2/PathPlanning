@@ -40,9 +40,7 @@ def draw_block_list(ax, blocks, color=None, alpha=0.15):
     if type(ax) is Poly3DCollection:
         ax.set_verts(vl[fl])
     else:
-        pc = Poly3DCollection(vl[fl], alpha=alpha, linewidths=1, edgecolors='k')
-        pc.set_facecolor(color)
-        h = ax.add_collection3d(pc)
+        h = ax.add_collection3d(Poly3DCollection(vl[fl], facecolors='black', alpha=alpha, linewidths=1, edgecolors='k'))
         return h
 
 
@@ -68,9 +66,7 @@ def draw_obb(ax, OBB, color=None, alpha=0.15):
     if type(ax) is Poly3DCollection:
         ax.set_verts(vl[fl])
     else:
-        pc = Poly3DCollection(vl[fl], alpha=alpha, linewidths=1, edgecolors='k')
-        pc.set_facecolor(color)
-        h = ax.add_collection3d(pc)
+        h = ax.add_collection3d(Poly3DCollection(vl[fl], facecolors='black', alpha=alpha, linewidths=1, edgecolors='k'))
         return h
 
 
@@ -90,7 +86,6 @@ def visualization(initparams):
         # V = np.array(list(initparams.V))
         # E = initparams.E
         #----------- end
-        V = np.array(initparams.V)
         # edges = initparams.E
         Path = np.array(initparams.Path)
         start = initparams.env.start
@@ -106,7 +101,7 @@ def visualization(initparams):
         
         # ax.view_init(elev=0.+ 0.03*initparams.ind/(2*np.pi), azim=90 + 0.03*initparams.ind/(2*np.pi))
         # ax.view_init(elev=0., azim=90.)
-        ax.view_init(elev=90., azim=0.)
+        ax.view_init(elev=65., azim=60.)
         # ax.view_init(elev=-8., azim=180)
         ax.clear()
         # drawing objects
@@ -122,7 +117,7 @@ def visualization(initparams):
         ax.plot(start[0:1], start[1:2], start[2:], 'go', markersize=7, markeredgecolor='k')
         ax.plot(goal[0:1], goal[1:2], goal[2:], 'ro', markersize=7, markeredgecolor='k')
         # adjust the aspect ratio
-        ax.dist = 5
+        ax.dist = 15
         set_axes_equal(ax)
         make_transparent(ax)
         #plt.xlabel('s')
